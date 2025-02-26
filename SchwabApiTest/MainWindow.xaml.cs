@@ -16,6 +16,7 @@ using static SchwabApiCS.SchwabApi;
 using static SchwabApiCS.Streamer;
 using static SchwabApiCS.Streamer.AccountActivity.ExecutionRequested;
 using static SchwabApiCS.Streamer.LevelOneEquitiesService;
+using Algoliath;
 
 namespace SchwabApiTest
 {
@@ -460,6 +461,8 @@ namespace SchwabApiTest
                 var aapl15minPrices = schwabApi.GetPriceHistory("AAPL", SchwabApi.PeriodType.day, 1, SchwabApi.FrequencyType.minute,
                                                                15, DateTime.Today.AddDays(-2), DateTime.Today.AddDays(1), true);
                 //TestExceptionHandling(); // uncomment to test
+
+                TimerUtility.DustyTimer();
             }
             catch (Exception ex)
             {
@@ -931,7 +934,7 @@ public void SpyPropertyCallback(LevelOneEquity data, string propertyName)
 
 
         /// <summary>
-        /// Whenever a LevelOneEquities response is processed for SPY, this is called.
+        ///// Whenever a LevelOneEquities response is processed for SPY, this is called.
         /// </summary>
         /// <param name="data"></param>
         public void SpyStreamCallback(LevelOneEquity data)

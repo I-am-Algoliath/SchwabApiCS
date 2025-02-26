@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Algoliath\Algoliath.csproj" />
     <ProjectReference Include="..\SchwabApiCS\SchwabApiCS.csproj" />
     <ProjectReference Include="..\SchwabApiCS_WPF\SchwabApiCS_WPF.csproj" />
   </ItemGroup>
